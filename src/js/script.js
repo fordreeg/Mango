@@ -1,0 +1,7 @@
+function foot() {
+
+}
+
+function f() {
+
+}
