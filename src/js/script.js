@@ -1,7 +1,0 @@
-function foot() {
-
-}
-
-function f() {
-
-}
