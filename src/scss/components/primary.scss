@@ -1,28 +1,23 @@
 .main {
+  position: relative;
   padding: 15px 40px 40px 30px;
   width: 100%;
   height: 700px;
   background-size: cover;
-  background: linear-gradient(277.57deg, #FE1725 0%, #EDAD57 100%) no-repeat center center;
+  background: $grad_bg no-repeat center center;
+  font-family: 'Open Sans', monospace;
+  overflow: hidden;
 
   &__header {
     display: flex;
     max-width: 100%;
-    justify-content: space-between;
+    height: 65px;
+    justify-content: flex-start;
 
-    &-wrap {
-      display: flex;
-    }
     &-logo {
-      max-width: 61px;
-      max-height: 50px;
-      width: 100%;
-      height: 100%;
+      width: 61px;
+      height: 50px;
       margin-right: 28px;
-      img {
-        width: 100%;
-        height: 100%;
-      }
     }
     &-list {
       display: flex;
@@ -30,7 +25,7 @@
       padding: 0;
       li {
         list-style: none;
-        display: inline-block;
+        margin-right: 30px;
         &:hover {
           .main__header-item {
             text-shadow: 0 0 .85px #fff, 0 0 .85px #fff;
@@ -44,7 +39,6 @@
     &-item {
       position: relative;
       display: inline-block;
-      margin-right: 30px;
       text-decoration: none;
       color: #fff;
       font-size: 14px;
@@ -56,30 +50,219 @@
         height: 2px;
         width: 100%;
         border-radius: 4px;
+        transition: opacity .2s;
         background-color: #fff;
         opacity: 0;
-        transition: opacity .2s;
       }
     }
     &-btn {
-      box-sizing: content-box;
-      display: inline-block;
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 140px;
-      max-width: 100%;
       height: 40px;
-      max-height: 100%;
       border-radius: 30px;
       background-color: #fff;
       font-weight: 800;
       font-size: 14px;
       cursor: pointer;
-      text-align: center;
-      line-height: 40px;
       text-transform: uppercase;
+      transition: background-color .2s, color .2s;
       &:hover {
-        border: 1px solid black;
+        background-color: $hover;
+        color: #fff;
       }
     }
   }
+  &__info {
+    margin-top: 129px;
+    font-family: 'Montserrat', serif;
+  }
+  &__subtitle {
+    font-weight: 800;
+    font-size: 34px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  &__title {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 86px;
+    color: #fff;
+    line-height: 81px;
+  }
+  &__descr {
+    margin-top: 5px;
+    font-family: 'Open Sans', serif;
+    width: 291px;
+    max-width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    color: #fff;
+  }
+  &__walletBtn {
+    position: relative;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    height: 60px;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Open Sans', serif;
+    font-weight: 700;
+    font-size: 16px;
+    background: $grad_btn;
+    &:hover {
+      &:before {
+        opacity: 1;
+      }
+    }
+    &:before {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 30px;
+      content: 'создать кошелёк';
+      width: 100%;
+      height: 100%;
+      background: $hover;
+      opacity: 0;
+      transition: opacity .2s;
+    }
+  }
+  &__call {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    width: 62px;
+    height: 62px;
+    background-color: #7DC81C;
+    cursor: pointer;
+    box-shadow: 0 0 rgba(147, 207, 70, 0.4),
+                0 0 0 10px rgba(147, 207, 70, 0.4);
+    animation: wave 1s linear infinite;
+    transition: transform .2s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  &__effects {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &__circle {
+    position: absolute;
+    bottom: -125px;
+    right: 326px;
+    width: 606px;
+    height: 606px;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 100%;
+    background: rgba(239, 239, 250, 0.15);
+    box-shadow: 0 0 rgba(239, 239, 250, 0.06),
+                0 0 0 50px rgba(239, 239, 250, 0.06),
+                0 0 0 100px rgba(239, 239, 250, 0.06);
+    animation: biGwave 1s linear infinite;
+  }
+  &__man {
+    position: absolute;
+    bottom: 0;
+    right: 390px;
+    width: 670px;
+    height: 592px;
+  }
+  &__peach-left {
+    position: absolute;
+    bottom: 126px;
+    left: 120px;
+  }
+  &__peach-right {
+    position: absolute;
+    bottom: 265px;
+    right: 60px;
+  }
+  &__peach-top {
+    position: absolute;
+    bottom: 435px;
+    left: 887px;
+  }
+  &__leaf-bottom {
+    position: absolute;
+    bottom: 23px;
+    left: 615px;
+  }
+  &__leaf-top {
+     position: absolute;
+     top: 76px;
+     left: 632px;
+  }
+  &__leaf-right {
+    position: absolute;
+    top: 120px;
+    right: 195px;
+  }
+  &__leaf-focus{
+    position: absolute;
+    z-index: 1;
+    top: 160px;
+    left: 152px;
+  }
+  &__ellipse-right {
+    position: absolute;
+    width: 292px;
+    height: 292px;
+    right: -116px;
+    top: 143px;
+    background: rgba(239, 239, 250, 0.07);
+    border-radius: 100%;
+  }
+  &__ellipse-top {
+    position: absolute;
+    width: 218px;
+    height: 218px;
+    left: 615px;
+    top: -54px;
+    background: rgba(239, 239, 250, 0.07);
+    border-radius: 100%;
+  }
+  &__spot {
+    position: absolute;
+    width: 313px;
+    height: 243px;
+    left: 213px;
+    top: 126px;
+  }
+}
 
+@keyframes wave {
+  100% {
+    box-shadow: 0 0 0 10px rgba(147, 207, 70, 0.4),
+                0 0 0 10px rgba(147, 207, 70, 0);
+  }
+}
+@keyframes biGwave {
+  100% {
+    box-shadow: 0 0 0 50px rgba(239, 239, 250, 0.06),
+                0 0 0 100px rgba(239, 239, 250, 0.06),
+                0 0 0 150px rgba(239, 239, 250, 0);
+  }
 }
