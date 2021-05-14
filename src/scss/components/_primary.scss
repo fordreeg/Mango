@@ -7,6 +7,12 @@
   background: $grad_bg no-repeat center center;
   font-family: 'Open Sans', monospace;
   overflow: hidden;
+  @media (max-width: 900px) {
+    height: 642px;
+  }
+  @media (max-width: 720px) {
+    height: 500px;
+  }
 
   &__header {
     position: relative;
@@ -15,11 +21,22 @@
     max-width: 100%;
     height: 65px;
     justify-content: flex-start;
+    @media (max-width: 900px) {
+      justify-content: center;
+    }
 
     &-logo {
       width: 61px;
       height: 50px;
       margin-right: 28px;
+      @media (max-width: 480px) {
+        display: none;
+      }
+    }
+    &-nav {
+      @media (max-width: 900px) {
+        display: none;
+      }
     }
     &-list {
       display: flex;
@@ -86,10 +103,18 @@
     display: flex;
     margin-top: 129px;
     font-family: 'Montserrat', serif;
+    @media (max-width: 720px) {
+      justify-content: center;
+      text-align: center;
+      margin-top: 38px;
+    }
+  }
+  &__text {
+    width: 400px;
   }
   &__circle {
     position: relative;
-    left: 238px;
+    left: 19%;
     width: 606px;
     height: 606px;
     max-width: 100%;
@@ -100,6 +125,25 @@
     0 0 0 50px rgba(239, 239, 250, 0.06),
     0 0 0 100px rgba(239, 239, 250, 0.06);
     animation: biGwave 1s linear infinite;
+    @media (max-width: 1400px) {
+      width: 526px;
+      height: 526px;
+      transform: translateY(20%) translateX(-10%);
+    }
+    @media (max-width: 1200px) {
+      width: 530.25px;
+      height: 518.25px;
+      transform: translateY(22%) translateX(4%);
+    }
+    @media (max-width: 900px) {
+      transform: translateY(19%) translateX(-5%);
+    }
+    @media (max-width: 720px) {
+      width: 0;
+      height: 0;
+      box-shadow: none;
+      animation: none;
+    }
   }
   &__man {
     position: absolute;
@@ -107,17 +151,57 @@
     right: 70px;
     width: 670px;
     height: 592px;
+    @media (max-width: 1400px) {
+      width: 586.25px;
+      height: 518px;
+      bottom: 140px;
+    }
+    @media (max-width: 900px) {
+      width: 586.25px;
+      height: 518px;
+      bottom: 140px;
+      right: -25px;
+    }
+    @media (max-width: 720px) {
+      display: none;
+    }
   }
   &__peach-top {
     position: absolute;
     top: -55px;
     left: -95px;
+    @media (max-width: 1400px) {
+      width: 87px;
+      height: 89px;
+    }
+    @media (max-width: 900px) {
+      left: -78px;
+      width: 72px;
+      height: 71px;
+    }
+    @media (max-width: 720px) {
+      display: block;
+      width: 62px;
+      height: 61px;
+      left: -55px;
+      top: 8px;
+    }
+
   }
   &__subtitle {
     font-weight: 800;
     font-size: 34px;
     text-transform: uppercase;
     color: #fff;
+    @media (max-width: 1200px) {
+      font-size: 28px;
+    }
+    @media (max-width: 720px) {
+      font-size: 24px;
+    }
+    @media (max-width: 480px) {
+      font-size: 20px;
+    }
   }
   &__title {
     font-weight: 800;
@@ -125,6 +209,15 @@
     font-size: 86px;
     color: #fff;
     line-height: 81px;
+    @media (max-width: 1200px) {
+      font-size: 70px;
+    }
+    @media (max-width: 720px) {
+      font-size: 60px;
+    }
+    @media (max-width: 480px) {
+      font-size: 50px;
+    }
   }
   &__descr {
     margin-top: 5px;
@@ -135,6 +228,13 @@
     font-weight: 500;
     line-height: 27px;
     color: #fff;
+    @media (max-width: 720px) {
+      margin: 0 auto;
+    }
+    @media (max-width: 480px) {
+      font-size: 16px;
+      width: 270px;
+    }
   }
   &__walletBtn {
     position: relative;
@@ -152,6 +252,13 @@
     font-weight: 700;
     font-size: 16px;
     background: $grad_btn;
+    @media (max-width: 900px) {
+      width: 220px;
+      height: 50px;
+    }
+    @media (max-width: 720px) {
+      margin: 68px auto 0;
+    }
     &:hover {
       &:before {
         opacity: 1;
@@ -175,6 +282,7 @@
     position: absolute;
     bottom: 40px;
     right: 40px;
+    z-index: 4;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -187,8 +295,22 @@
     0 0 0 10px rgba(147, 207, 70, 0.4);
     animation: wave 1s linear infinite;
     transition: transform .2s;
+    @media (max-width: 1200px) {
+      width: 50px;
+      height: 49px;
+      bottom: 30px;
+      right: 30px;
+    }
     &:hover {
       transform: scale(1.1);
+    }
+    &-icon {
+      width: 27px;
+      height: 27px;
+      @media (max-width: 1200px) {
+        width: 22px;
+        height: 22px;
+      }
     }
   }
   &__ellipse-right {
@@ -199,22 +321,54 @@
     top: 143px;
     background: rgba(239, 239, 250, 0.07);
     border-radius: 100%;
+    @media (max-width: 1400px) {
+      display: none;
+    }
+    @media (max-width: 720px) {
+      display: block;
+      width: 162px;
+      height: 158px;
+      right: -98px;
+    }
+  }
+  &__ellipse-left {
+    position: absolute;
+    display: none;
+    width: 162px;
+    height: 158px;
+    left: 5%;
+    top: 75%;
+    background: rgba(239, 239, 250, 0.07);
+    border-radius: 100%;
+    @media (max-width: 720px) {
+      display: block;
+    }
   }
   &__ellipse-top {
     position: absolute;
     width: 218px;
     height: 218px;
-    left: 615px;
+    right: 57%;
     top: -54px;
     background: rgba(239, 239, 250, 0.07);
     border-radius: 100%;
+    @media (max-width: 900px) {
+      width: 163px;
+      height: 158px;
+    }
   }
   &__spot {
     position: absolute;
     width: 313px;
     height: 243px;
-    left: 213px;
-    top: 126px;
+    right: 73%;
+    bottom: 48%;
+    @media (max-width: 900px) {
+      bottom: 38%;
+    }
+    @media (max-width: 720px) {
+      display: none;
+    }
   }
   &__parallax {
     position: absolute;
@@ -230,42 +384,79 @@
     &-left {
       position: absolute;
       display: inline-block;
-      left: 120px;
-      bottom: 125px;
+      right: 88%;
+      bottom: 14%;
+      @media (max-width: 720px) {
+        width: 90px;
+        height: 89px;
+        right: 70%;
+        bottom: 21%;
+      }
     }
     &-right {
       position: absolute;
       display: inline-block;
       z-index: 4;
-      top: 350px;
-      right: 64px;
+      bottom: 38%;
+      right: 3%;
+      @media (max-width: 1200px) {
+        display: none;
+      }
     }
   }
   &__leaf {
     &-focus {
       position: absolute;
       display: inline-block;
-      left: 152px;
-      top: 160px;
+      right: 85%;
+      bottom: 58%;
+      @media (max-width: 1400px) {
+        bottom: 69%;
+      }
+      @media (max-width: 1200px) {
+        width: 76px;
+        height: 79px;
+        bottom: 68%;
+      }
+      @media (max-width: 720px) {
+        bottom: 60%;
+        right: 82%;
+      }
+
     }
     &-top {
       position: absolute;
       display: inline-block;
-      left: 632px;
-      top: 76px;
+      right: 65%;
+      bottom: 79%;
+      @media (max-width: 1200px) {
+        display: none;
+      }
     }
     &-bottom {
       position: absolute;
       display: inline-block;
-      bottom: 23px;
-      left: 615px;
+      bottom: 4%;
+      right: 62%;
+      @media (max-width: 720px) {
+        display: none;
+      }
+
     }
     &-right {
       position: absolute;
       display: inline-block;
       z-index: 04;
-      top: 120px;
-      right: 195px;
+      bottom: 70%;
+      right: 10%;
+      @media (max-width: 1200px) {
+        bottom: 77%;
+        right: 30%;
+      }
+      @media (max-width: 720px) {
+        bottom: 22%;
+        right: 11%;
+      }
     }
   }
 }

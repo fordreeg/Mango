@@ -1,0 +1,88 @@
+.main {
+  &__hamburger {
+    position: absolute;
+    top: 10px;
+    left: -5px;
+    display: none;
+    flex-direction: column;
+    width: 42px;
+    cursor: pointer;
+    @media (max-width: 900px) {
+      display: flex;
+    }
+    @media (max-width: 480px) {
+      width: 36px;
+    }
+    &-one {
+      display: block;
+      width: 42px;
+      height: 30px;
+      position: relative;
+      @media (max-width: 480px) {
+        width: 36px;
+      }
+    }
+    &-hr {
+      padding: 0;
+      width: 42px;
+      height: 4px;
+      background-color: #fff;
+      display: block;
+      border-radius: 2px;
+      transition: all 0.4s ease-in-out;
+      position: absolute;
+      @media (max-width: 480px) {
+        width: 36px;
+      }
+    }
+  }
+  &__checkbox:checked + label > .hamburger-two > .hr-one{
+    transform: translateX(40px);
+    background-color: transparent;
+  }
+
+  &__checkbox:checked + label > .hamburger-two > .hr-two{
+    transform: rotate(45deg);
+  }
+
+  &__checkbox:checked + label > .hamburger-two > .hr-three{
+    transform: rotate(-45deg);
+  }
+
+  &__checkbox:checked + label > .hamburger-two > .hr-four{
+    transform: translateX(-40px);
+    background-color: transparent;
+  }
+
+}
+
+.visuallyHidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px; width: 1px;
+  margin: -1px; padding: 0; border: 0;
+}
+
+.hr-one {
+  top: 0;
+}
+
+.hr-two,
+.hr-three {
+  top: 12.5px;
+  @media (max-width: 480px) {
+    top: 10px;
+  }
+}
+
+.hr-three {
+  right: 0;
+}
+.hr-four {
+  bottom: 0;
+  @media (max-width: 480px) {
+    bottom: 6px;
+  }
+}
+

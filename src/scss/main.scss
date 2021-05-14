@@ -20,27 +20,33 @@
   padding: 0 10px 0 10px;
 
 
-  @media (min-width: 1201px) {
+  @media (min-width: 1401px) {
     width: 1170px;
+  }
+
+  @media (max-width: 1400px) {
+    width: 940px;
   }
 
   @media (max-width: 1200px) {
     width: 940px;
   }
-  @media (max-width: 992px) {
-    width: 700px;
+
+  @media (max-width: 900px) {
+    width: 764px;
   }
 
-  @media (max-width: 768px) {
-    width: 500px;
+  @media (max-width: 720px) {
+    width: 480px;
   }
 
-  @media (max-width: 576px) {
+  @media (max-width: 480px) {
     width: 320px;
   }
 }
 
 @import "components/primary";
+@import "components/hamburger";
 @import "components/capabilities";
 
 
