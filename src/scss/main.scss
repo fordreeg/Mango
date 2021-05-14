@@ -19,25 +19,28 @@
   margin: 0 auto;
   padding: 0 10px 0 10px;
 
-  @media (max-width: 1599.98px) {
+
+  @media (min-width: 1201px) {
     width: 1170px;
   }
 
-  @media (max-width: 1199.98px) {
-    width: 900px;
+  @media (max-width: 1200px) {
+    width: 940px;
   }
-  @media (max-width: 991.98px) {
+  @media (max-width: 992px) {
     width: 700px;
   }
 
-  @media (max-width: 767.98px) {
+  @media (max-width: 768px) {
     width: 500px;
   }
 
-  @media (max-width: 575.98px) {
+  @media (max-width: 576px) {
     width: 320px;
   }
 }
 
 @import "components/primary";
+@import "components/capabilities";
+
 

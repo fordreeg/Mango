@@ -9,6 +9,8 @@
   overflow: hidden;
 
   &__header {
+    position: relative;
+    z-index: 4;
     display: flex;
     max-width: 100%;
     height: 65px;
@@ -55,31 +57,61 @@
         opacity: 0;
       }
     }
-    &-btn {
-      position: absolute;
-      top: 20px;
-      right: 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 140px;
-      height: 40px;
-      border-radius: 30px;
-      background-color: #fff;
-      font-weight: 800;
-      font-size: 14px;
-      cursor: pointer;
-      text-transform: uppercase;
-      transition: background-color .2s, color .2s;
-      &:hover {
-        background-color: $hover;
-        color: #fff;
-      }
+  }
+  &__btn-login {
+    position: absolute;
+    z-index: 4;
+    top: 20px;
+    right: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: #fff;
+    font-weight: 800;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color .2s, color .2s;
+    &:hover {
+      background-color: $hover;
+      color: #fff;
     }
   }
   &__info {
+    position: relative;
+    z-index: 4;
+    display: flex;
     margin-top: 129px;
     font-family: 'Montserrat', serif;
+  }
+  &__circle {
+    position: relative;
+    left: 238px;
+    width: 606px;
+    height: 606px;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 100%;
+    background: rgba(239, 239, 250, 0.15);
+    box-shadow: 0 0 rgba(239, 239, 250, 0.06),
+    0 0 0 50px rgba(239, 239, 250, 0.06),
+    0 0 0 100px rgba(239, 239, 250, 0.06);
+    animation: biGwave 1s linear infinite;
+  }
+  &__man {
+    position: absolute;
+    bottom: 115px;
+    right: 70px;
+    width: 670px;
+    height: 592px;
+  }
+  &__peach-top {
+    position: absolute;
+    top: -55px;
+    left: -95px;
   }
   &__subtitle {
     font-weight: 800;
@@ -152,79 +184,12 @@
     background-color: #7DC81C;
     cursor: pointer;
     box-shadow: 0 0 rgba(147, 207, 70, 0.4),
-                0 0 0 10px rgba(147, 207, 70, 0.4);
+    0 0 0 10px rgba(147, 207, 70, 0.4);
     animation: wave 1s linear infinite;
     transition: transform .2s;
     &:hover {
       transform: scale(1.1);
     }
-  }
-  &__effects {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-  }
-  &__circle {
-    position: absolute;
-    bottom: -125px;
-    right: 326px;
-    width: 606px;
-    height: 606px;
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 100%;
-    background: rgba(239, 239, 250, 0.15);
-    box-shadow: 0 0 rgba(239, 239, 250, 0.06),
-                0 0 0 50px rgba(239, 239, 250, 0.06),
-                0 0 0 100px rgba(239, 239, 250, 0.06);
-    animation: biGwave 1s linear infinite;
-  }
-  &__man {
-    position: absolute;
-    bottom: 0;
-    right: 390px;
-    width: 670px;
-    height: 592px;
-  }
-  &__peach-left {
-    position: absolute;
-    bottom: 126px;
-    left: 120px;
-  }
-  &__peach-right {
-    position: absolute;
-    bottom: 265px;
-    right: 60px;
-  }
-  &__peach-top {
-    position: absolute;
-    bottom: 435px;
-    left: 887px;
-  }
-  &__leaf-bottom {
-    position: absolute;
-    bottom: 23px;
-    left: 615px;
-  }
-  &__leaf-top {
-     position: absolute;
-     top: 76px;
-     left: 632px;
-  }
-  &__leaf-right {
-    position: absolute;
-    top: 120px;
-    right: 195px;
-  }
-  &__leaf-focus{
-    position: absolute;
-    z-index: 1;
-    top: 160px;
-    left: 152px;
   }
   &__ellipse-right {
     position: absolute;
@@ -251,7 +216,60 @@
     left: 213px;
     top: 126px;
   }
+  &__parallax {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+  }
+  &__peach {
+    &-left {
+      position: absolute;
+      display: inline-block;
+      left: 120px;
+      bottom: 125px;
+    }
+    &-right {
+      position: absolute;
+      display: inline-block;
+      z-index: 4;
+      top: 350px;
+      right: 64px;
+    }
+  }
+  &__leaf {
+    &-focus {
+      position: absolute;
+      display: inline-block;
+      left: 152px;
+      top: 160px;
+    }
+    &-top {
+      position: absolute;
+      display: inline-block;
+      left: 632px;
+      top: 76px;
+    }
+    &-bottom {
+      position: absolute;
+      display: inline-block;
+      bottom: 23px;
+      left: 615px;
+    }
+    &-right {
+      position: absolute;
+      display: inline-block;
+      z-index: 04;
+      top: 120px;
+      right: 195px;
+    }
+  }
 }
+
 
 @keyframes wave {
   100% {

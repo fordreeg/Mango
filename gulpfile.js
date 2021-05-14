@@ -72,7 +72,7 @@ function img() {
 /////////////////////============WATCHER=============/////////////////////
 
 async function watcher () {
-    watch(["src/*.html"], {usePolling: true}).on('change', html);
+    watch("src/*.html", {usePolling: true}).on('change', html);
     watch("src/templates/*.html", {usePolling: true}).on('change', html);
     watch("src/scss/**/*.+(scss|sass)", {usePolling: true}).on('change', styles);
     watch("src/js/**/*.js", {usePolling: true}).on('change', scripts);
