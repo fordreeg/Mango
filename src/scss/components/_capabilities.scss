@@ -45,10 +45,6 @@
   }
   &__hr {
     margin: 15px auto 0;
-    width: 64px;
-    height: 8px;
-    background: #F75539;
-    border-radius: 20px;
     @media (max-width: 768px) {
       height: 5px;
       width: 50px;
@@ -77,6 +73,7 @@
     overflow: hidden;
     font-family: 'Open Sans', sans-serif;
     background-color: #fff;
+    border-radius: 10px;
     @media (max-width: 1400px) {
       width: 300px;
     }

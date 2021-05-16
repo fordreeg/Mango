@@ -1,3 +1,46 @@
 $hover: #5DA500;
 $grad_btn: linear-gradient(92.4deg, #84D022 3.47%, #67AB0E 95.56%);
 $grad_bg: linear-gradient(277.57deg, #FE1725 0%, #EDAD57 100%);
+
+.hr {
+  width: 64px;
+  height: 8px;
+  background: #F75539;
+  border-radius: 20px;
+}
+
+.wallet {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  height: 60px;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Open Sans', serif;
+  font-weight: 700;
+  font-size: 16px;
+  background: $grad_btn;
+  cursor: pointer;
+  &:hover {
+    &:before {
+      opacity: 1;
+    }
+  }
+  &:before {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    content: 'создать кошелёк';
+    width: 100%;
+    height: 100%;
+    background: $hover;
+    opacity: 0;
+    transition: opacity .2s;
+  }
+}

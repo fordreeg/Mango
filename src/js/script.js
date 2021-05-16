@@ -1,52 +1,82 @@
-document.addEventListener('scroll', () => {
-    parallax(document.querySelectorAll('.main__parallax-item'), document.querySelector('.main__peach-top'))
-});
+document.addEventListener('DOMContentLoaded', () => {
+//////////////////////===LISTENERS===////////////////////////////////////////////
+    (() => {
+        const menuNav = document.querySelector('.menu__nav'),
+            menuBg = document.querySelector('.menu__bg'),
+            hamburger = document.querySelector('.main__hamburger'),
+            hamburgerClose = document.querySelector('.menu__close');
 
-function parallax(collection, additionalElement = 0) {
-    let scrollPosition = window.pageYOffset;
+        hamburger.addEventListener('click', () => {
+            setBurgerMenuOptions(0, 1)
+        });
 
-    if (scrollPosition < 700) {
-        for (let img of collection) {
-            img.style.transform = `translate3d(0px, 
-            ${scrollPosition * img.getAttribute('data-speedMove') / 10}px, 0px)`;
+        hamburgerClose.addEventListener('click', () => {
+            setBurgerMenuOptions(-100, 1)
+        });
+        menuBg.addEventListener('click', () => {
+            setBurgerMenuOptions(-100, 1)
+        });
+
+        function setBurgerMenuOptions(position, opacity) {
+            menuBg.style.right = `${position}%`;
+            menuBg.style.opacity = `${opacity}`;
+
+            menuNav.style.left = `${position}%`;
+            menuNav.style.opacity = `${opacity}`;
         }
+    })();
+//////////////////////===PARALLAX===////////////////////////////////////////////
+    window.onscroll = triggerParallax;
 
-        if(window.screen.availWidth < 721) {
-            additionalElement.style.transform = `translate3d(0px, 
-            ${scrollPosition * additionalElement.getAttribute('data-speedMove') / 10}px, 0px)`;
-        }
+    function triggerParallax() {
+        let scrollPosition = window.pageYOffset,
+            paymentsSection = document.querySelector('.payments').offsetTop -
+                                document.querySelector('.main').offsetTop,
+            advantagesSection = document.querySelector('.advantages').offsetTop -
+                document.querySelector('.main').offsetTop;
 
-    } else {
-        document.onscroll = null;
+        setPrimaryParallax(document.querySelectorAll('.main__parallax-item'),
+            scrollPosition);
+        setPaymentsParallax(document.querySelectorAll('.payments__shapes'),
+            paymentsSection, scrollPosition);
+        setAdvantagesParallax(document.querySelectorAll('.advantages__parallax-img'),
+            advantagesSection, scrollPosition);
     }
-}
 
-if (window.screen.availWidth < 993) {
-    const nav = document.querySelector('.menu__nav'),
-        bg = document.querySelector('.menu__bg');
+    function setPrimaryParallax(collection, scrollPosition) {
+        if (window.screen.availWidth > 768) {
+            for (let img of collection) {
+                if (!img.classList.contains('main__peach-top')) {
+                    img.style.transform = `translate3d(0px,
+                    ${(scrollPosition  * img.getAttribute('data-speedMove')) / 10}px, 0px)`;
+                }
+            }
+        } else {
+            for (let img of collection) {
+                img.style.transform = `translate3d(0px,
+                ${(scrollPosition * img.getAttribute('data-speedMove')) / 10}px, 0px)`;
+            }
 
-    document.querySelector('.main__hamburger').addEventListener('click', (e) => {
-        bg.style.right = '0';
-        bg.style.opacity = '1';
+        }
+    }
 
-        nav.style.left = '0';
-        nav.style.opacity = '1';
-    });
+    function setPaymentsParallax(collection, sectionPosition, scrollPosition) {
+        if (scrollPosition >= sectionPosition) {
+            for (let img of collection) {
+                img.style.transform = `translate3d(0px,
+                ${((scrollPosition - sectionPosition) * img.getAttribute('data-speedMove')) / 10}px, 0px)`;
+            }
+        }
+    }
 
-    document.querySelector('.menu__close').addEventListener('click', (e) => {
-        bg.style.right = '-100%';
-        bg.style.opacity = '0';
+    function setAdvantagesParallax(collection, sectionPosition, scrollPosition) {
+        if (scrollPosition >= sectionPosition) {
+            for (let img of collection) {
+                img.style.transform = `translate3d(0px,
+                ${((scrollPosition - sectionPosition) * img.getAttribute('data-speedMove')) / 10}px, 0px)`;
+            }
+        }
+    }
 
-        nav.style.left = '-100%';
-        nav.style.opacity = '0';
-    });
-    document.querySelector('.menu__bg').addEventListener('click', (e) => {
-        bg.style.right = '-100%';
-        bg.style.opacity = '0';
-
-        nav.style.left = '-100%';
-        nav.style.opacity = '0';
-    });
-
-}
+});
 

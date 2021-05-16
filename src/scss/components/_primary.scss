@@ -180,28 +180,6 @@
       display: none;
     }
   }
-  &__peach-top {
-    position: absolute;
-    top: -55px;
-    left: -95px;
-    @media (max-width: 1400px) {
-      width: 87px;
-      height: 89px;
-    }
-    @media (max-width: 992px) {
-      left: -13px;
-      width: 72px;
-      height: 71px;
-    }
-    @media (max-width: 768px) {
-      display: block;
-      width: 62px;
-      height: 61px;
-      left: -55px;
-      top: 8px;
-    }
-
-  }
   &__subtitle {
     font-weight: 800;
     font-size: 34px;
@@ -251,45 +229,13 @@
     }
   }
   &__walletBtn {
-    position: relative;
     margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 240px;
-    height: 60px;
-    color: #fff;
-    border-radius: 30px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-family: 'Open Sans', serif;
-    font-weight: 700;
-    font-size: 16px;
-    background: $grad_btn;
     @media (max-width: 992px) {
       width: 220px;
       height: 50px;
     }
     @media (max-width: 768px) {
       margin: 58px auto 0;
-    }
-    &:hover {
-      &:before {
-        opacity: 1;
-      }
-    }
-    &:before {
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 30px;
-      content: 'создать кошелёк';
-      width: 100%;
-      height: 100%;
-      background: $hover;
-      opacity: 0;
-      transition: opacity .2s;
     }
   }
   &__call {
@@ -399,6 +345,35 @@
     margin: 0 auto;
   }
   &__peach {
+    &-top {
+      position: absolute;
+      top: 22%;
+      left: 47.5%;
+      @media (max-width: 1400px) {
+        width: 87px;
+        height: 89px;
+        top: 32%;
+        left: 47.5%;
+      }
+      @media (max-width: 1200px) {
+        top: 34%;
+        left: 54.5%;
+      }
+      @media (max-width: 992px) {
+        top: 37%;
+        left: 45%;
+        width: 82px;
+        height: 81px;
+      }
+      @media (max-width: 768px) {
+        display: block;
+        width: 62px;
+        height: 61px;
+        top: 17%;
+        left: 85%;
+      }
+
+    }
     &-left {
       position: absolute;
       display: inline-block;
