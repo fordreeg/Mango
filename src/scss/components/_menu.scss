@@ -1,0 +1,118 @@
+.menu {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  &__bg {
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: 99;
+    width: 65%;
+    height: 100vh;
+    background-color: rgba(0,0, 0, .4s);
+    right: -100%;
+    opacity: 0;
+    transition: opacity, right .5s;
+    @media (max-width: 576px) {
+      width: 40%;
+    }
+  }
+  &__nav {
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: 99;
+    left: -100%;
+    opacity: 0;
+    transition: opacity, left .5s;
+    font-family: 'Open Sans', monospace;
+    margin: 0;
+    width: 35%;
+    height: 100vh;
+    background: linear-gradient(166.5deg, #EDAD57 0%, #FE1725 100%), #FFFFFF;
+    @media (max-width: 576px) {
+      width: 60%;
+    }
+  }
+  &__list {
+    margin: 45px 0 0 25px;
+    padding: 0;
+    list-style: none;
+  }
+  &__close {
+    position: relative;
+    display: block;
+    left: 25px;
+    top: 25px;
+    width: 24px;
+    height: 24px;
+  }
+  &__close:before, .menu__close:after {
+    position: absolute;
+    content: '';
+    left: 10px;
+    height: 26px;
+    width: 3px;
+    background-color: #fff;
+  }
+  &__close:before {
+    transform: rotate(45deg);
+  }
+  &__close:after {
+    transform: rotate(-45deg);
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 45px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    &:after {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: -25px;
+      height: 1px;
+      width: 110%;
+      background-color: rgba(255, 255, 255, .2);
+    }
+    &_withoutHr {
+      &:after {
+        display: none;
+      }
+    }
+  }
+  &__social {
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    &-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 38px;
+      height: 38px;
+      background-color: #fff;
+      border-radius: 100%;
+      @media (max-width: 576px) {
+        width: 36px;
+        height: 36px;
+      }
+    }
+    &-icon {
+      width: 21px;
+      height: 21px;
+      fill: #F75539;
+      &:hover {
+        fill: #EDAC57;
+      }
+    }
+  }
+}
