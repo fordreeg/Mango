@@ -1,0 +1,37 @@
+.footer {
+  padding: 25px 0;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  @media (max-width: 576px) {
+    padding: 15px 0;
+    font-size: 14px;
+    line-height: 19px;
+  }
+  &__copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  &__logo {
+    display: block;
+    margin-right: 15px;
+    height: 35px;
+    width: 45px;
+    @media (max-width: 576px) {
+      height: 28px;
+      width: 35px;
+    }
+  }
+  &__text {
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #7C7C7C;
+    @media (max-width: 576px) {
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+}
