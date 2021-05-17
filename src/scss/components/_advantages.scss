@@ -9,6 +9,8 @@
     padding: 60px 0;
   }
   &__title {
+    position: relative;
+    z-index: 3;
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
     font-size: 36px;
@@ -258,9 +260,9 @@
         top: -25%;
         left: 2%;
       }
-      @media (max-width: 576px) {
-        display: none;
-      }
+      //@media (max-width: 576px) {
+      //  display: none;
+      //}
     }
     &-right {
       display: inline-block;
@@ -277,9 +279,9 @@
         right: 4%;
         bottom: 76%;
       }
-      @media (max-width: 576px) {
-        display: none;
-      }
+      //@media (max-width: 576px) {
+      //  display: none;
+      //}
     }
   }
   &__leaf {
@@ -304,9 +306,9 @@
         left: 5%;
         bottom: 81%;
       }
-      @media (max-width: 576px) {
-        display: none;
-      }
+      //@media (max-width: 576px) {
+      //  display: none;
+      //}
     }
     &-right {
       display: inline-block;
@@ -329,9 +331,9 @@
         top: -30%;
         right: 0;
       }
-      @media (max-width: 576px) {
-        display: none;
-      }
+      //@media (max-width: 576px) {
+      //  display: none;
+      //}
     }
   }
 }

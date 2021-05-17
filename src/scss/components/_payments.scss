@@ -207,6 +207,9 @@
       @media (min-width: 768px) {
         display: none;
       }
+      @media (max-width: 576px) {
+        display: none;
+      }
     }
     &-leftBot {
       position: absolute;
@@ -214,6 +217,9 @@
       top: 44%;
       display: inline-block;
       @media (min-width: 768px) {
+        display: none;
+      }
+      @media (max-width: 576px) {
         display: none;
       }
     }
@@ -225,6 +231,9 @@
       @media (min-width: 768px) {
         display: none;
       }
+      @media (max-width: 576px) {
+        display: none;
+      }
     }
     &-rightBot {
       position: absolute;
@@ -232,6 +241,9 @@
       top: 85%;
       display: inline-block;
       @media (min-width: 768px) {
+        display: none;
+      }
+      @media (max-width: 576px) {
         display: none;
       }
     }
