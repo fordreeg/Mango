@@ -57,13 +57,15 @@ document.addEventListener('DOMContentLoaded', () => {
         let scrollPosition = window.pageYOffset,
             toPaymentsSection = document.querySelector('.payments').offsetTop -
                 document.querySelector('.main').offsetTop,
-            toAdvantagesSection = document.querySelector('.advantages').offsetTop -
+            toFaqSection = document.querySelector('.faq').offsetTop -
                 document.querySelector('.main').offsetTop;
 
         setPrimaryParallax(document.querySelectorAll('.main__parallax-item'),
             scrollPosition);
         setParallax(document.querySelectorAll('.advantages__parallax-img'),
             toPaymentsSection, scrollPosition);
+        setParallax(document.querySelectorAll('.questions__parallax'),
+            toFaqSection, scrollPosition);
     }
 
     function setPrimaryParallax(collection, scrollPosition) {
