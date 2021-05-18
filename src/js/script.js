@@ -8,19 +8,21 @@ document.addEventListener('DOMContentLoaded', () => {
         faqFooters = document.querySelectorAll('.faq__footer');
 
 //////////////////////===LISTENERS===////////////////////////
-    window.onscroll = triggerParallax;
+    if (screen.availWidth > 1200) {
+        window.onscroll = triggerParallax;
 
-    hamburger.addEventListener('click', () => {
-        setHamburgerMenuOptions(0, 1)
-    });
+        hamburger.addEventListener('click', () => {
+            setHamburgerMenuOptions(0, 1)
+        });
 
-    hamburgerClose.addEventListener('click', () => {
-        setHamburgerMenuOptions(-100, 1)
-    });
+        hamburgerClose.addEventListener('click', () => {
+            setHamburgerMenuOptions(-100, 1)
+        });
 
-    menuBg.addEventListener('click', () => {
-        setHamburgerMenuOptions(-100, 1)
-    });
+        menuBg.addEventListener('click', () => {
+            setHamburgerMenuOptions(-100, 1)
+        });
+    }
 
     faqItems.forEach(elem => elem.onclick = accordion);
 

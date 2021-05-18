@@ -90,7 +90,10 @@ function server() {
 		server: {
 			baseDir: 'dist'
 		},
-		notify: false
+		notify: false,
+		online: true,
+		tunnel: true,
+		logLevel: "debug"
 	});
 }
 
