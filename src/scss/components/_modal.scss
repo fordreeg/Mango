@@ -1,5 +1,5 @@
 .overlay {
-  display: flex;
+  display: none;
   position: fixed;
   overflow: hidden;
   z-index: 10;
@@ -159,7 +159,7 @@
 }
 
 .modal {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -178,6 +178,7 @@
   }
   &__wrap {
     position: absolute;
+    display: none;
     top: 50%;
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
