@@ -6,13 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
         faqItems = document.querySelectorAll('.faq__item'),
         faqRounds = document.querySelectorAll('.faq__round_last'),
         faqFooters = document.querySelectorAll('.faq__footer'),
-        modal = document.querySelector('.modal'),
+        modal = document.querySelector('.modal__wrap'),
         overlay = document.querySelector('.overlay'),
         modalClose = document.querySelector('.modal-close'),
         consultationClose = document.querySelector('.consultation__close'),
         consultation = document.querySelector('.consultation'),
         btnsShowForm = [
                          document.querySelector('.faq__img-btn'),
+                         document.querySelector('.main__call-icon'),
                          document.querySelector('.main__walletBtn'),
                          document.querySelector('.payments__btn'),
                          document.querySelector('.main__btn-login')

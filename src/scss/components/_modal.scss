@@ -1,5 +1,5 @@
 .overlay {
-  display: none;
+  display: flex;
   position: fixed;
   overflow: hidden;
   z-index: 10;
@@ -23,15 +23,33 @@
   min-height: 300px;
   border-radius: 20px;
   overflow: hidden;
-
+  @media (max-width: 576px) {
+    width: 280px;
+    padding: 15px;
+  }
   &__form {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+    @media (max-width: 576px) {
+      margin-top: 30px;
+    }
   }
   &__logo {
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 60px;
+    height: 50px;
+    @media (max-width: 576px) {
+      width: 50px;
+      height: 40px;
+    }
+    &-img {
+      width: 100%;
+      height: 100%;
+    }
   }
   &__close {
     position: absolute;
@@ -84,6 +102,9 @@
     }
     &::placeholder {
       color: #fff;
+    }
+    @media (max-width: 576px) {
+      font-size: 14px;
     }
   }
   &__btn {
@@ -138,12 +159,12 @@
 }
 
 .modal {
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
   position: absolute;
+  overflow: hidden;
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
@@ -151,11 +172,28 @@
   width: 300px;
   height: 300px;
   background: linear-gradient(145.75deg, #F75539 14.15%, #EF9B51 85.11%);
-  &-close {
+  @media (max-width: 576px) {
+    width: 250px;
+    height: 250px;
+  }
+  &__wrap {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    border-radius: 100%;
+    width: 300px;
+    height: 300px;
+    @media (max-width: 576px) {
+      width: 250px;
+      height: 250px;
+    }
+  }
+  &-close {
+    position: fixed;
     z-index: 10;
-    top: 0;
-    right: 46%;
+    top: -13px;
+    right: -30px;
     font-size: 35px;
     color: #fff;
     transition: color .3s;
@@ -163,18 +201,28 @@
     &:hover {
       color: #67AB0E;
     }
+    @media (max-width: 576px) {
+      right: -15px;
+    }
   }
   &-subtitle {
     font-size: 21px;
     font-weight: 600;
     text-align: center;
     color: #fff;
+    @media (max-width: 576px) {
+      font-size: 17px;
+    }
   }
   &-descr {
     margin-top: 15px;
     line-height: 22px;
     color: #fff;
     text-align: center;
+    @media (max-width: 576px) {
+      font-size: 15px;
+      max-width: 200px;
+    }
   }
   &-ellipseRight{
     position: absolute;
