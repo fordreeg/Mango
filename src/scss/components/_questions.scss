@@ -1,17 +1,16 @@
 .questions {
   position: relative;
   z-index: 2;
-  padding: 70px 0 70px 0;
+  padding: 70px 0;
   width: 100%;
   overflow: hidden;
-  height: 350px;
   background: $grad_bg;
   font-family: 'Open Sans', sans-serif;
   @media (max-width: 992px) {
-    height: 410px;
+    padding: 50px 0;
   }
   @media (max-width: 576px) {
-    padding: 40px 0 40px 0;
+    padding: 40px 0;
   }
   &__title {
     position: relative;
@@ -60,10 +59,8 @@
   &__wrapper {
     position: relative;
     z-index: 2;
-    margin: 32px auto 0;
+    margin: 32px -15px 0;
     display: flex;
-    justify-content: space-between;
-    width: 100%;
     @media (max-width: 992px) {
       margin: 22px auto 0;
       flex-direction: column;
@@ -73,10 +70,12 @@
   &__item {
     display: flex;
     align-items: center;
-    width: 370px;
+    width: calc(100% / 3 - 30px);
+    margin: 0 15px;
     @media (max-width: 992px) {
+      width: 100%;
+      margin: 12px 0;
       justify-content: center;
-      margin-bottom: 15px;
     }
     &-soc {
       justify-content: space-evenly;
@@ -177,7 +176,7 @@
     color: #FFFFFF;
     text-decoration: none;
     @media (max-width: 576px) {
-      font-size: 24px;
+      font-size: 20px;
       line-height: 33px;
     }
   }

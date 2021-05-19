@@ -5,34 +5,66 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburgerClose = document.querySelector('.menu__close'),
         faqItems = document.querySelectorAll('.faq__item'),
         faqRounds = document.querySelectorAll('.faq__round_last'),
-        faqFooters = document.querySelectorAll('.faq__footer');
+        faqFooters = document.querySelectorAll('.faq__footer'),
+        modal = document.querySelector('.modal'),
+        overlay = document.querySelector('.overlay'),
+        modalClose = document.querySelector('.modal-close'),
+        consultationClose = document.querySelector('.consultation__close'),
+        consultation = document.querySelector('.consultation'),
+        btnsShowForm = [
+                         document.querySelector('.faq__img-btn'),
+                         document.querySelector('.main__walletBtn'),
+                         document.querySelector('.payments__btn'),
+                         document.querySelector('.main__btn-login')
+        ];
 
 //////////////////////===LISTENERS===////////////////////////
     if (screen.availWidth > 1200) {
         window.onscroll = triggerParallax;
-
-        hamburger.addEventListener('click', () => {
-            setHamburgerMenuOptions(0, 1)
-        });
-
-        hamburgerClose.addEventListener('click', () => {
-            setHamburgerMenuOptions(-100, 1)
-        });
-
-        menuBg.addEventListener('click', () => {
-            setHamburgerMenuOptions(-100, 1)
-        });
     }
+
+    hamburger.addEventListener('click', () => {
+        setHamburgerMenuOptions(0, 1)
+    });
+
+    hamburgerClose.addEventListener('click', () => {
+        setHamburgerMenuOptions(-100, 1)
+    });
+
+    menuBg.addEventListener('click', () => {
+        setHamburgerMenuOptions(-100, 1)
+    });
 
     faqItems.forEach(elem => elem.onclick = accordion);
 
+    modalClose.addEventListener('click', () => {
+        setModal(modal, overlay, 'none');
+    });
+
+    consultationClose.addEventListener('click', () => {
+        setModal(consultation, overlay, 'none');
+    });
+
+    btnsShowForm.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            setModal(consultation, overlay, 'block');
+        });
+    });
+
 //////////////////////===HAMBURGER_MENU===////////////////////////
     function setHamburgerMenuOptions(position, opacity) {
-        menuBg.style.right = `${position}%`;
+        modal.style.display = `${position}%`;
         menuBg.style.opacity = `${opacity}`;
 
         menuNav.style.left = `${position}%`;
         menuNav.style.opacity = `${opacity}`;
+    }
+
+//////////////////////===MODAL/CONSULTATION===////////////////////////
+    function setModal(elem, parent, value) {
+        elem.style.display = value;
+        parent.style.display = value;
     }
 
 //////////////////////===ACCORDION===////////////////////////

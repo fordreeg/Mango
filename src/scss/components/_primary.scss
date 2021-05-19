@@ -1,16 +1,22 @@
 .main {
   position: relative;
   width: 100%;
-  height: 700px;
+  max-height: 650px;
   background-size: cover;
   background: $grad_bg no-repeat center center;
   font-family: 'Open Sans', monospace;
   overflow: hidden;
+  @media (max-width: 1400px) {
+    max-height: 600px;
+  }
   @media (max-width: 992px) {
-    height: 642px;
+    max-height: 480px;
   }
   @media (max-width: 768px) {
-    height: 500px;
+    min-height: 460px;
+  }
+  @media (max-width: 576px) {
+    max-height: 380px;
   }
 
   &__header {
@@ -19,10 +25,13 @@
     z-index: 4;
     display: flex;
     max-width: 100%;
-    height: 65px;
+    max-height: 65px;
     justify-content: flex-start;
     @media (max-width: 992px) {
       justify-content: center;
+    }
+    @media (max-width: 576px) {
+      height: 0;
     }
 
     &-logo {
@@ -86,8 +95,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 140px;
-    height: 40px;
+    padding: 10px 20px;
     border-radius: 30px;
     background-color: #fff;
     font-weight: 800;
@@ -95,9 +103,12 @@
     cursor: pointer;
     text-transform: uppercase;
     transition: background-color .2s, color .2s;
-    @media (max-width: 576px) {
-      width: 110px;
-      height: 36px;
+    @media (max-width: 992px) {
+      font-size: 12px;
+      padding: 7px 15px;
+    }
+    @media (max-width: 768px) {
+      display: none;
     }
     &:hover {
       background-color: $hover;
@@ -110,18 +121,20 @@
     display: flex;
     margin-top: 129px;
     font-family: 'Montserrat', serif;
+    @media (max-width: 992px) {
+      margin-top: 45px;
+    }
     @media (max-width: 768px) {
-      width: 520px;
       justify-content: center;
       text-align: center;
       margin: 0 auto;
     }
     @media (max-width: 576px) {
-      width: 230px;
+      margin-top: 30px;
     }
   }
   &__text {
-    width: 400px;
+    max-width: 400px;
     @media (max-width: 768px) {
       margin-top: 38px;
     }
@@ -142,15 +155,15 @@
     @media (max-width: 1400px) {
       width: 526px;
       height: 526px;
-      transform: translateY(20%) translateX(-10%);
+      transform: translateY(12%) translateX(-10%);
     }
     @media (max-width: 1200px) {
-      width: 530.25px;
-      height: 518.25px;
-      transform: translateY(22%) translateX(4%);
+      width: 530px;
+      height: 518px;
+      transform: translateY(16%) translateX(4%);
     }
     @media (max-width: 992px) {
-      transform: translateY(19%) translateX(-5%);
+      transform: translateY(20%) translateX(-5%);
     }
     @media (max-width: 768px) {
       width: 0;
@@ -186,7 +199,7 @@
     text-transform: uppercase;
     color: #fff;
     @media (max-width: 992px) {
-      font-size: 28px;
+      font-size: 27px;
     }
     @media (max-width: 768px) {
       font-size: 24px;
@@ -214,8 +227,7 @@
   &__descr {
     margin-top: 5px;
     font-family: 'Open Sans', serif;
-    width: 291px;
-    max-width: 100%;
+    max-width: 291px;
     font-size: 18px;
     font-weight: 500;
     line-height: 27px;
@@ -225,17 +237,16 @@
     }
     @media (max-width: 576px) {
       font-size: 16px;
-      width: 270px;
+      max-width: 270px;
     }
   }
   &__walletBtn {
     margin-top: 30px;
-    @media (max-width: 992px) {
-      width: 220px;
-      height: 50px;
-    }
     @media (max-width: 768px) {
       margin: 58px auto 0;
+      padding: 15px 40px;
+      font-size: 14px;
+
     }
   }
   &__call {
@@ -360,7 +371,7 @@
         left: 54.5%;
       }
       @media (max-width: 992px) {
-        top: 37%;
+        top: 27%;
         left: 45%;
         width: 82px;
         height: 81px;
