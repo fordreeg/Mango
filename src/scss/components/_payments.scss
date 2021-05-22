@@ -111,34 +111,25 @@
     &:hover {
       background-color: #FFF4EC;
     }
+    @media (max-width: 1400px) {
+      width: calc(100% / 5 - 20px);
+      margin: 10px 10px;
+    }
     @media (max-width: 992px) {
       width: calc(100% / 4 - 20px);
       margin: 10px 10px;
-      min-height: 135px;
     }
     @media (max-width: 768px) {
-      padding: 1% 0;
       width: calc(100% / 3 - 10px);
       margin: 5px 5px;
-      min-height: 110px;
     }
-    @media (max-width: 768px) {
-      padding: 1% 0;
-      width: calc(100% / 2 - 20px);
-      margin: 10px 10px;
+    @media (max-width: 576px) {
+      width: calc(100% / 2 - 10px);
+      margin: 5px 5px;
     }
     &-img {
-      @media (max-width: 1400px) {
-        width: 80%;
-        height: 50%;
-      }
-      @media (max-width: 992px) {
-        width: 67%;
-        height: 50%;
-      }
-      @media (max-width: 768px) {
-        height: 50%;
-      }
+      width: 100%;
+      height: 100%;
     }
   }
   &__btn {
